@@ -1,6 +1,8 @@
 import { FC } from 'react';
 import { registerRootComponent } from 'expo';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet } from 'react-native';
+import View from 'react-native-ui-lib/view';
+import Text from 'react-native-ui-lib/text';
 import SWRDefaultConfig from './lib/swr-default-config';
 import { Provider } from 'react-redux';
 import store from '@app-state/store';
@@ -9,7 +11,7 @@ const App: FC = () => {
   return (
     <SWRDefaultConfig>
       <Provider store={store}>
-        <View style={styles.container}>
+        <View flex style={styles.container}>
           <Text>Open up "src/app.tsx" to start working on your app!</Text>
         </View>
       </Provider>
