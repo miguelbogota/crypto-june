@@ -11,7 +11,6 @@ const SWRDefaultConfig: FC<SWRDefaultConfigProps> = ({ children }) => {
   return (
     <SWRConfig
       value={{
-        suspense: true,
         fetcher: url => fetch(url).then(r => r.json()),
         provider: () => new Map(),
         isVisible: () => true,

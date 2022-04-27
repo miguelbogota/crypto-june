@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { Text, View } from 'react-native-ui-lib';
 
-const Summary: FC = () => {
+const Coins: FC = () => {
   return (
     <View
       style={{
@@ -12,9 +12,9 @@ const Summary: FC = () => {
         height: '100%',
       }}
     >
-      <Text style={{ marginBottom: 30, fontSize: 20, fontWeight: '800' }}>Summary</Text>
+      <Text style={{ marginBottom: 30, fontSize: 20, fontWeight: '800' }}>Coins</Text>
     </View>
   );
 };
 
-export default Summary;
+export default Coins;

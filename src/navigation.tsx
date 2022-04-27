@@ -8,12 +8,14 @@ import Settings from '@app-views/settings';
 import Trending from '@app-views/trending';
 import { StyleSheet } from 'react-native';
 import { Text, View } from 'react-native-ui-lib';
+import Coins from '@app-views/coins';
 
 /** Type of routes available in the app. */
 export type NavigationOptions = {
   favorites: undefined;
   settings: undefined;
   trending: undefined;
+  coins: undefined;
 };
 
 const Tab = createBottomTabNavigator<NavigationOptions>();
@@ -38,6 +40,20 @@ const TabOptions: FC = () => {
               <Icon name="favorite" size={32} color={color} style={styles.tabIcon} />
               <Text color={color} style={styles.tabLabel}>
                 Favorites
+              </Text>
+            </View>
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="coins"
+        component={Coins}
+        options={{
+          tabBarIcon: ({ color }) => (
+            <View flex style={styles.tabView}>
+              <Icon name="donut-large" size={32} color={color} style={styles.tabIcon} />
+              <Text color={color} style={styles.tabLabel}>
+                Coins
               </Text>
             </View>
           ),

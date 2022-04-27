@@ -1,5 +1,5 @@
-/** Response from the API from coin gecko. */
-export type CoinGeckoResponse = {
+/** Response from the API from coin gecko to get all the markets. */
+export type CoinGeckoMarkets = {
   id: string;
   symbol: string;
   name: string;
@@ -30,4 +30,23 @@ export type CoinGeckoResponse = {
     percentage: number;
   } | null;
   last_updated: string;
+};
+
+/** Response from the API from coin gecko to get all the trending coins. */
+export type CoinGeckoTrending = {
+  coins: {
+    item: {
+      id: string;
+      coin_id: number;
+      name: string;
+      symbol: string;
+      market_cap_rank: number;
+      thumb: string;
+      small: string;
+      large: string;
+      slug: string;
+      price_btc: number;
+      score: number;
+    };
+  }[];
 };

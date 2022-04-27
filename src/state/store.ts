@@ -1,11 +1,26 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
+import { persistReducer } from 'redux-persist';
+import { combineReducers } from 'redux';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+// Reducers
 import favorites from './favorites';
+
+/** Persisted reducer. */
+const persistedReducer = persistReducer(
+  { key: 'root-state', storage: AsyncStorage },
+  combineReducers({
+    // Add your reducers here.
+    favorites,
+  }),
+);
 
 /** Configured store for manage redux state. */
 const store = configureStore({
-  reducer: {
-    favorites,
-  },
+  reducer: persistedReducer,
+  middleware: getDefaultMiddleware =>
+    getDefaultMiddleware({
+      serializableCheck: false,
+    }),
 });
 
 export default store;
