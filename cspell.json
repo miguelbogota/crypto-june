@@ -2,5 +2,5 @@
   "version": "0.2",
   "ignorePaths": ["yarn.lock", "node_modules", ".git/objects", ".vscode"],
   "allowCompoundWords": true,
-  "words": []
+  "words": ["reduxjs", "RNUI"]
 }

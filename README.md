@@ -2,14 +2,19 @@
 
 Crypto June is a crypto currency tracker.
 
-#### Technologies used:
+#### Technologies Used:
 
-- Expo
-- Typescript
-- React Native
-- Eslint
-- Prettier
-- Babel
+- [Expo](https://expo.dev)
+- [Typescript](https://www.typescriptlang.org)
+- [React Native](https://reactnative.dev)
+- [RNUILib](https://wix.github.io/react-native-ui-lib)
+- [CoinGecko API](https://www.coingecko.com/en/api/documentation)
+- [SWR](https://swr.vercel.app)
+- [Redux](https://redux.js.org)
+- [Redux Toolkit](https://redux-toolkit.js.org)
+- [ESLint](https://eslint.org)
+- [Prettier](https://prettier.io)
+- [Babel](https://babeljs.io)
 
 ## Author
 
@@ -25,7 +30,7 @@ _Miguel Bogota_
       alt="Dev.to link to profile"
     />
   </a>&nbsp;&nbsp;
-  <a href="https://instagram.com/migue_bogota/">
+  <a href="https://instagram.com/migue_bogota">
     <img
       height="30"
       src="https://raw.githubusercontent.com/miguelbogota/miguelbogota/master/images/instagram.jpg"

@@ -38,7 +38,7 @@
     "keyword-spacing": ["error", { "before": true, "after": true }],
     "space-infix-ops": ["error", { "int32Hint": false }],
     "no-trailing-spaces": "error",
-    "curly": ["error", "multi"],
+    "curly": ["error", "all"],
     "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 0, "maxBOF": 0 }],
     "object-curly-spacing": ["error", "always"],
     "array-bracket-spacing": ["error", "never"],
