@@ -1,8 +1,11 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
+import favorites from './favorites';
 
 /** Configured store for manage redux state. */
 const store = configureStore({
-  reducer: {},
+  reducer: {
+    favorites,
+  },
 });
 
 export default store;

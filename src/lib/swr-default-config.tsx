@@ -1,10 +1,13 @@
-import { FC } from 'react';
+import { FC, PropsWithChildren } from 'react';
 import { AppState, Platform } from 'react-native';
 import NetInfo, { NetInfoState } from '@react-native-community/netinfo';
 import { SWRConfig } from 'swr';
 
+/** Props of the SWRDefaultConfig component. */
+export type SWRDefaultConfigProps = PropsWithChildren<{}>;
+
 /** Wrapper for the default configuration of SWR in React Native. */
-const SWRDefaultConfig: FC = ({ children }) => {
+const SWRDefaultConfig: FC<SWRDefaultConfigProps> = ({ children }) => {
   return (
     <SWRConfig
       value={{
