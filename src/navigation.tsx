@@ -7,7 +7,7 @@ import Favorites from '@app-views/favorites';
 import Settings from '@app-views/settings';
 import Trending from '@app-views/trending';
 import { StyleSheet } from 'react-native';
-import { Text, View } from 'react-native-ui-lib';
+import { Colors, Text, View } from 'react-native-ui-lib';
 import Coins from '@app-views/coins';
 
 /** Type of routes available in the app. */
@@ -28,17 +28,30 @@ const TabOptions: FC = () => {
       screenOptions={{
         headerShown: false,
         tabBarShowLabel: false,
-        tabBarStyle: { ...styles.tabBar, ...styles.shadow },
+        tabBarStyle: {
+          ...styles.tabBar,
+          ...styles.shadow,
+          shadowColor: Colors.shadowColor,
+          backgroundColor: Colors.paperBG,
+        },
       }}
     >
       <Tab.Screen
         name="favorites"
         component={Favorites}
         options={{
-          tabBarIcon: ({ color }) => (
+          tabBarIcon: ({ focused }) => (
             <View flex style={styles.tabView}>
-              <Icon name="favorite" size={32} color={color} style={styles.tabIcon} />
-              <Text color={color} style={styles.tabLabel}>
+              <Icon
+                name="favorite"
+                size={32}
+                color={!focused ? Colors.textColor : Colors.primaryColor}
+                style={styles.tabIcon}
+              />
+              <Text
+                color={!focused ? Colors.textColor : Colors.primaryColor}
+                style={styles.tabLabel}
+              >
                 Favorites
               </Text>
             </View>
@@ -49,10 +62,18 @@ const TabOptions: FC = () => {
         name="coins"
         component={Coins}
         options={{
-          tabBarIcon: ({ color }) => (
+          tabBarIcon: ({ focused }) => (
             <View flex style={styles.tabView}>
-              <Icon name="donut-large" size={32} color={color} style={styles.tabIcon} />
-              <Text color={color} style={styles.tabLabel}>
+              <Icon
+                name="donut-large"
+                size={32}
+                color={!focused ? Colors.textColor : Colors.primaryColor}
+                style={styles.tabIcon}
+              />
+              <Text
+                color={!focused ? Colors.textColor : Colors.primaryColor}
+                style={styles.tabLabel}
+              >
                 Coins
               </Text>
             </View>
@@ -63,10 +84,18 @@ const TabOptions: FC = () => {
         name="trending"
         component={Trending}
         options={{
-          tabBarIcon: ({ color }) => (
+          tabBarIcon: ({ focused }) => (
             <View flex style={styles.tabView}>
-              <Icon name="trending-up" size={32} color={color} style={styles.tabIcon} />
-              <Text color={color} style={styles.tabLabel}>
+              <Icon
+                name="trending-up"
+                size={32}
+                color={!focused ? Colors.textColor : Colors.primaryColor}
+                style={styles.tabIcon}
+              />
+              <Text
+                color={!focused ? Colors.textColor : Colors.primaryColor}
+                style={styles.tabLabel}
+              >
                 Trending
               </Text>
             </View>
@@ -77,10 +106,18 @@ const TabOptions: FC = () => {
         name="settings"
         component={Settings}
         options={{
-          tabBarIcon: ({ color }) => (
+          tabBarIcon: ({ focused }) => (
             <View flex style={styles.tabView}>
-              <Icon name="settings" size={32} color={color} style={styles.tabIcon} />
-              <Text color={color} style={styles.tabLabel}>
+              <Icon
+                name="settings"
+                size={32}
+                color={!focused ? Colors.textColor : Colors.primaryColor}
+                style={styles.tabIcon}
+              />
+              <Text
+                color={!focused ? Colors.textColor : Colors.primaryColor}
+                style={styles.tabLabel}
+              >
                 Settings
               </Text>
             </View>
@@ -106,20 +143,19 @@ const styles = StyleSheet.create({
     bottom: 30,
     left: 18,
     right: 18,
-    backgroundColor: '#fff',
     borderRadius: 15,
     height: 90,
     paddingTop: 26,
   },
   shadow: {
-    shadowColor: '#242424',
+    borderTopWidth: 0,
+    elevation: 0,
     shadowOffset: {
       width: 0,
       height: 5,
     },
     shadowOpacity: 0.25,
     shadowRadius: 3.5,
-    elevation: 5,
   },
   tabView: {
     flex: 1,

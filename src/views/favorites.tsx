@@ -4,8 +4,10 @@ import { Text, View } from 'react-native-ui-lib';
 
 const Favorites: FC = () => {
   const favorites = useFavorites();
+
   return (
     <View
+      bg-screenBG
       style={{
         display: 'flex',
         justifyContent: 'center',
@@ -14,9 +16,11 @@ const Favorites: FC = () => {
         height: '100%',
       }}
     >
-      <Text style={{ marginBottom: 30, fontSize: 20, fontWeight: '800' }}>Favorites:</Text>
+      <Text textColor style={{ marginBottom: 30, fontSize: 20, fontWeight: '800' }}>
+        Favorites:
+      </Text>
       <Text></Text>
-      {favorites.map((favorite, i) => (
+      {favorites?.map((favorite, i) => (
         <Text key={i}>{favorite}</Text>
       ))}
     </View>

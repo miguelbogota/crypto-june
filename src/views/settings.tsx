@@ -1,9 +1,11 @@
+import ThemeSwitcher from '@app-components/theme-switcher';
 import { FC } from 'react';
 import { Text, View } from 'react-native-ui-lib';
 
 const Settings: FC = () => {
   return (
     <View
+      bg-screenBG
       style={{
         display: 'flex',
         justifyContent: 'center',
@@ -12,7 +14,10 @@ const Settings: FC = () => {
         height: '100%',
       }}
     >
-      <Text style={{ marginBottom: 30, fontSize: 20, fontWeight: '800' }}>Settings</Text>
+      <ThemeSwitcher />
+      <Text textColor style={{ marginBottom: 30, fontSize: 20, fontWeight: '800' }}>
+        Settings
+      </Text>
     </View>
   );
 };

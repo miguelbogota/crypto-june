@@ -4,6 +4,7 @@ import { Text, View } from 'react-native-ui-lib';
 const Coins: FC = () => {
   return (
     <View
+      bg-screenBG
       style={{
         display: 'flex',
         justifyContent: 'center',
@@ -12,7 +13,9 @@ const Coins: FC = () => {
         height: '100%',
       }}
     >
-      <Text style={{ marginBottom: 30, fontSize: 20, fontWeight: '800' }}>Coins</Text>
+      <Text textColor style={{ marginBottom: 30, fontSize: 20, fontWeight: '800' }}>
+        Coins
+      </Text>
     </View>
   );
 };

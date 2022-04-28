@@ -15,6 +15,7 @@ const Trending: FC = () => {
   if (error) {
     return (
       <View
+        bg-screenBG
         style={{
           display: 'flex',
           justifyContent: 'center',
@@ -23,13 +24,14 @@ const Trending: FC = () => {
           height: '100%',
         }}
       >
-        <Text>Error loading trending info</Text>
+        <Text textColor>Error loading trending info</Text>
       </View>
     );
   }
   if (!data) {
     return (
       <View
+        bg-screenBG
         style={{
           display: 'flex',
           justifyContent: 'center',
@@ -38,13 +40,14 @@ const Trending: FC = () => {
           height: '100%',
         }}
       >
-        <Text>Loading trending info</Text>
+        <Text textColor>Loading trending info</Text>
       </View>
     );
   }
 
   return (
     <View
+      bg-screenBG
       style={{
         display: 'flex',
         justifyContent: 'center',
@@ -53,7 +56,9 @@ const Trending: FC = () => {
         height: '100%',
       }}
     >
-      <Text style={{ marginBottom: 30, fontSize: 20, fontWeight: '800' }}>Trending</Text>
+      <Text textColor style={{ marginBottom: 30, fontSize: 20, fontWeight: '800' }}>
+        Trending
+      </Text>
       {data.coins.map(coin => (
         <View key={coin.item.id} style={{ marginBottom: 10 }}>
           {favorites.find(favorite => favorite === coin.item.name) ? (

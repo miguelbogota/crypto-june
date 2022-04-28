@@ -4,6 +4,7 @@ import { combineReducers } from 'redux';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 // Reducers
 import favorites from './favorites';
+import theme from './theme';
 
 /** Persisted reducer. */
 const persistedReducer = persistReducer(
@@ -11,6 +12,7 @@ const persistedReducer = persistReducer(
   combineReducers({
     // Add your reducers here.
     favorites,
+    theme,
   }),
 );
 
