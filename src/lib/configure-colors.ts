@@ -3,18 +3,22 @@ import { Colors } from 'react-native-ui-lib';
 const configureColors = () => {
   Colors.loadSchemes({
     light: {
-      screenBG: '#ffffff',
-      paperBG: '#f9f9f9',
-      textColor: '#444444',
-      primaryColor: '#00897b',
-      shadowColor: '#343434',
+      background: '#ffffff',
+      paper: '#f9f9f9',
+      text: '#444444',
+      buttonText: '#ffffff',
+      primary: '#00897b',
+      shadow: '#343434',
+      warn: '#b22f2f',
     },
     dark: {
-      screenBG: '#141414',
-      paperBG: '#222222',
-      textColor: '#e0e0e0',
-      primaryColor: '#00897b',
-      shadowColor: '#000000',
+      background: '#141414',
+      paper: '#222222',
+      text: '#e0e0e0',
+      buttonText: '#ffffff',
+      primary: '#00897b',
+      shadow: '#000000',
+      warn: '#b22f2f',
     },
   });
 };

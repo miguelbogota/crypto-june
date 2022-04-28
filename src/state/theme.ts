@@ -27,6 +27,17 @@ const themeSlice = createSlice({
 
 export const { setTheme, setSystemTheme } = themeSlice.actions;
 
-export const useTheme = () => useSelector((state: RootState) => state.theme);
+export const useTheme = () =>
+  useSelector((state: RootState) => {
+    // Adds theme inverted.
+    const invertedSystem = state.theme.system === 'dark' ? 'light' : 'dark';
+    const invertedValue = state.theme.value === 'dark' ? 'light' : 'dark';
+    const inverted = state.theme.value === 'system' ? invertedSystem : invertedValue;
+
+    return {
+      ...state.theme,
+      inverted: inverted as Theme,
+    };
+  });
 
 export default themeSlice.reducer;

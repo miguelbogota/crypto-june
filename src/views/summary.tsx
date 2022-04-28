@@ -4,7 +4,7 @@ import { Text, View } from 'react-native-ui-lib';
 const Summary: FC = () => {
   return (
     <View
-      bg-screenBG
+      bg-background
       style={{
         display: 'flex',
         justifyContent: 'center',
@@ -13,7 +13,7 @@ const Summary: FC = () => {
         height: '100%',
       }}
     >
-      <Text textColor style={{ marginBottom: 30, fontSize: 20, fontWeight: '800' }}>
+      <Text text style={{ marginBottom: 30, fontSize: 20, fontWeight: '800' }}>
         Summary
       </Text>
     </View>

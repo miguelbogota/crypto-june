@@ -1,29 +1,30 @@
-import { useFavorites } from '@app-state/favorites';
+import Container from '@app-components/container';
+import { removeFavorite, useFavorites } from '@app-state/favorites';
 import { FC } from 'react';
-import { Text, View } from 'react-native-ui-lib';
+import { Button, Text } from 'react-native-ui-lib';
+import { useDispatch } from 'react-redux';
 
 const Favorites: FC = () => {
   const favorites = useFavorites();
+  const dispatch = useDispatch();
 
   return (
-    <View
-      bg-screenBG
-      style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        width: '100%',
-        height: '100%',
-      }}
-    >
-      <Text textColor style={{ marginBottom: 30, fontSize: 20, fontWeight: '800' }}>
-        Favorites:
+    <Container>
+      <Text text style={{ marginBottom: 30, fontSize: 20, fontWeight: '800' }}>
+        Favorites
       </Text>
-      <Text></Text>
-      {favorites?.map((favorite, i) => (
-        <Text key={i}>{favorite}</Text>
+      {favorites.map((favorite, i) => (
+        <Button
+          key={i}
+          br20
+          bg-warn
+          onPress={() => dispatch(removeFavorite(favorite))}
+          style={{ marginBottom: 10 }}
+        >
+          <Text buttonText>Remove {favorite} from Favorites</Text>
+        </Button>
       ))}
-    </View>
+    </Container>
   );
 };
 

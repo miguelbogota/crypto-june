@@ -1,7 +1,7 @@
 import { FC, PropsWithChildren, useEffect, useState } from 'react';
 import { useColorScheme } from 'react-native';
 import { useDispatch } from 'react-redux';
-import { Colors, RadioButton, RadioGroup } from 'react-native-ui-lib';
+import { Colors, RadioButton, RadioGroup, Text } from 'react-native-ui-lib';
 import { setSystemTheme, setTheme, ThemeWithSystem, useTheme } from '@app-state/theme';
 
 export type ThemeSwitcherProps = PropsWithChildren<{}>;
@@ -11,14 +11,34 @@ const ThemeSwitcher: FC<ThemeSwitcherProps> = () => {
   const theme = useTheme();
 
   return (
-    <RadioGroup
-      initialValue={theme.value}
-      onValueChange={(theme: ThemeWithSystem) => dispatch(setTheme(theme))}
-    >
-      <RadioButton value={'system'} label={'System'} color={Colors.primaryColor} />
-      <RadioButton value={'light'} label={'Light'} color={Colors.primaryColor} />
-      <RadioButton value={'dark'} label={'Dark'} color={Colors.primaryColor} />
-    </RadioGroup>
+    <>
+      <Text text style={{ fontSize: 15, fontWeight: '500', marginBottom: 10 }}>
+        Theme
+      </Text>
+      <RadioGroup
+        initialValue={theme.value}
+        onValueChange={(theme: ThemeWithSystem) => dispatch(setTheme(theme))}
+      >
+        <RadioButton
+          value={'system'}
+          label={'System'}
+          color={Colors.primary}
+          style={{ marginBottom: 5 }}
+        />
+        <RadioButton
+          value={'light'}
+          label={'Light'}
+          color={Colors.primary}
+          style={{ marginBottom: 5 }}
+        />
+        <RadioButton
+          value={'dark'}
+          label={'Dark'}
+          color={Colors.primary}
+          style={{ marginBottom: 5 }}
+        />
+      </RadioGroup>
+    </>
   );
 };
 

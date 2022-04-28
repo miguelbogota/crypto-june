@@ -31,8 +31,8 @@ const TabOptions: FC = () => {
         tabBarStyle: {
           ...styles.tabBar,
           ...styles.shadow,
-          shadowColor: Colors.shadowColor,
-          backgroundColor: Colors.paperBG,
+          shadowColor: Colors.shadow,
+          backgroundColor: Colors.paper,
         },
       }}
     >
@@ -45,13 +45,10 @@ const TabOptions: FC = () => {
               <Icon
                 name="favorite"
                 size={32}
-                color={!focused ? Colors.textColor : Colors.primaryColor}
+                color={!focused ? Colors.text : Colors.primary}
                 style={styles.tabIcon}
               />
-              <Text
-                color={!focused ? Colors.textColor : Colors.primaryColor}
-                style={styles.tabLabel}
-              >
+              <Text color={!focused ? Colors.text : Colors.primary} style={styles.tabLabel}>
                 Favorites
               </Text>
             </View>
@@ -67,13 +64,10 @@ const TabOptions: FC = () => {
               <Icon
                 name="donut-large"
                 size={32}
-                color={!focused ? Colors.textColor : Colors.primaryColor}
+                color={!focused ? Colors.text : Colors.primary}
                 style={styles.tabIcon}
               />
-              <Text
-                color={!focused ? Colors.textColor : Colors.primaryColor}
-                style={styles.tabLabel}
-              >
+              <Text color={!focused ? Colors.text : Colors.primary} style={styles.tabLabel}>
                 Coins
               </Text>
             </View>
@@ -89,13 +83,10 @@ const TabOptions: FC = () => {
               <Icon
                 name="trending-up"
                 size={32}
-                color={!focused ? Colors.textColor : Colors.primaryColor}
+                color={!focused ? Colors.text : Colors.primary}
                 style={styles.tabIcon}
               />
-              <Text
-                color={!focused ? Colors.textColor : Colors.primaryColor}
-                style={styles.tabLabel}
-              >
+              <Text color={!focused ? Colors.text : Colors.primary} style={styles.tabLabel}>
                 Trending
               </Text>
             </View>
@@ -111,13 +102,10 @@ const TabOptions: FC = () => {
               <Icon
                 name="settings"
                 size={32}
-                color={!focused ? Colors.textColor : Colors.primaryColor}
+                color={!focused ? Colors.text : Colors.primary}
                 style={styles.tabIcon}
               />
-              <Text
-                color={!focused ? Colors.textColor : Colors.primaryColor}
-                style={styles.tabLabel}
-              >
+              <Text color={!focused ? Colors.text : Colors.primary} style={styles.tabLabel}>
                 Settings
               </Text>
             </View>

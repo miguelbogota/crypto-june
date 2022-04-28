@@ -10,15 +10,23 @@ import SWRDefaultConfig from '@app-lib/swr-default-config';
 import { useThemeSwitcher } from '@app-components/theme-switcher';
 import Navigation from './navigation';
 import store from '@app-state/store';
+import { StatusBar } from 'react-native';
+import { useTheme } from '@app-state/theme';
 
 /** Main app with availability of the providers. */
 const App: FC = () => {
   const themeIsLoading = useThemeSwitcher();
+  const theme = useTheme();
 
   return (
     <>
       {/*  Wait for theme to load to render the app. */}
-      {themeIsLoading.value || themeIsLoading.system ? null : <Navigation />}
+      {themeIsLoading.value || themeIsLoading.system ? null : (
+        <>
+          <StatusBar barStyle={`${theme.inverted}-content`} />
+          <Navigation />
+        </>
+      )}
     </>
   );
 };
