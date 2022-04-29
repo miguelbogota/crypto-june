@@ -10,6 +10,8 @@ const configureColors = () => {
       primary: '#00897b',
       shadow: '#343434',
       warn: '#b22f2f',
+      success: '#388e3c',
+      divider: '#aaaaaa',
     },
     dark: {
       background: '#141414',
@@ -19,6 +21,8 @@ const configureColors = () => {
       primary: '#00897b',
       shadow: '#000000',
       warn: '#b22f2f',
+      success: '#388e3c',
+      divider: '#555555',
     },
   });
 };

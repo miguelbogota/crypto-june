@@ -46,6 +46,7 @@
     "valid-jsdoc": "off",
     "require-jsdoc": "off",
     "new-cap": "off",
+    "camelcase": "off",
     "spaced-comment": ["error", "always", { "markers": ["/"] }],
     "react/display-name": "error",
     "react-hooks/exhaustive-deps": "off",

@@ -18,9 +18,9 @@ const Container: FC<ContainerProps> = ({ children }) => {
         width: '100%',
         height: '100%',
         paddingTop: safeArea.top + 20,
-        paddingBottom: safeArea.bottom + 20,
-        paddingLeft: safeArea.left + 20,
-        paddingRight: safeArea.right + 20,
+        paddingBottom: safeArea.bottom + 100,
+        paddingLeft: safeArea.left,
+        paddingRight: safeArea.right,
       }}
     >
       {children}

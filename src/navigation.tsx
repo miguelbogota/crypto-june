@@ -24,7 +24,7 @@ const Tab = createBottomTabNavigator<NavigationOptions>();
 const TabOptions: FC = () => {
   return (
     <Tab.Navigator
-      initialRouteName="trending"
+      initialRouteName="favorites"
       screenOptions={{
         headerShown: false,
         tabBarShowLabel: false,

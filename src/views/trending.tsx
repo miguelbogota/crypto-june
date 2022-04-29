@@ -23,29 +23,31 @@ const Trending: FC = () => {
   if (!data) {
     return (
       <Container>
-        <Text text>Loading trending info</Text>
+        <Text text>Loading...</Text>
       </Container>
     );
   }
 
   return (
     <Container>
-      <Text text style={{ marginBottom: 30, fontSize: 20, fontWeight: '800' }}>
-        Trending
-      </Text>
-      {data.coins.map(coin => (
-        <View key={coin.item.id} style={{ marginBottom: 10 }}>
-          {favorites.find(favorite => favorite === coin.item.name) ? (
-            <Button br20 bg-warn onPress={() => dispatch(removeFavorite(coin.item.name))}>
-              <Text buttonText>Remove {coin.item.name} from Favorites</Text>
-            </Button>
-          ) : (
-            <Button br20 bg-primary onPress={() => dispatch(addFavorite(coin.item.name))}>
-              <Text buttonText>Add {coin.item.name} to Favorites</Text>
-            </Button>
-          )}
-        </View>
-      ))}
+      <View style={{ marginHorizontal: 20 }}>
+        <Text text style={{ marginBottom: 20, fontSize: 20, fontWeight: '800' }}>
+          Trending
+        </Text>
+        {data.coins.map(coin => (
+          <View key={coin.item.id} style={{ marginBottom: 10 }}>
+            {favorites.find(favorite => favorite === coin.item.name) ? (
+              <Button br20 bg-warn onPress={() => dispatch(removeFavorite(coin.item.name))}>
+                <Text buttonText>Remove {coin.item.name} from Favorites</Text>
+              </Button>
+            ) : (
+              <Button br20 bg-primary onPress={() => dispatch(addFavorite(coin.item.name))}>
+                <Text buttonText>Add {coin.item.name} to Favorites</Text>
+              </Button>
+            )}
+          </View>
+        ))}
+      </View>
     </Container>
   );
 };
