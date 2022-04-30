@@ -13,20 +13,13 @@ const Trending: FC = () => {
   const { data, error } = useSWR<CoinGeckoMarkets[]>(
     `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd${
       !!trendingData && `&ids=${trendingData.coins.map(coin => coin.item.id).join('%2C')}`
-    }&order=market_cap_desc&per_page=10&page=1&sparkline=false`,
+    }&order=market_cap_desc&per_page=10&page=1&sparkline=true`,
   );
 
   if (trendingError || error) {
     return (
       <Container>
         <Text text>Error, try again later.</Text>
-      </Container>
-    );
-  }
-  if (!trendingData || !data) {
-    return (
-      <Container>
-        <Text text>Loading...</Text>
       </Container>
     );
   }
@@ -37,12 +30,18 @@ const Trending: FC = () => {
         Trending
       </Text>
 
-      <FlatList
-        style={{ width: '100%', paddingHorizontal: -40 }}
-        data={data}
-        renderItem={({ item }) => <CoinListItem {...item} />}
-        keyExtractor={coin => coin.id}
-      />
+      {!trendingData || !data ? (
+        <Text text style={{ marginLeft: 20 }}>
+          Loading...
+        </Text>
+      ) : (
+        <FlatList
+          style={{ width: '100%', paddingHorizontal: -40 }}
+          data={data}
+          renderItem={({ item }) => <CoinListItem {...item} />}
+          keyExtractor={coin => coin.id}
+        />
+      )}
     </Container>
   );
 };

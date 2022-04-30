@@ -12,6 +12,7 @@ import Navigation from './navigation';
 import store from '@app-state/store';
 import { StatusBar } from 'react-native';
 import { useTheme } from '@app-state/theme';
+import Summary from '@app-views/summary';
 
 /** Main app with availability of the providers. */
 const App: FC = () => {
@@ -24,6 +25,7 @@ const App: FC = () => {
       {themeIsLoading.value || themeIsLoading.system ? null : (
         <>
           <StatusBar barStyle={`${theme.inverted}-content`} />
+          <Summary />
           <Navigation />
         </>
       )}

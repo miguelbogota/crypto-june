@@ -1,5 +1,5 @@
 import { CoinGeckoMarkets } from '@app-models/coin-gecko-response';
-import { addFavorite } from '@app-state/favorites';
+import { openSummary } from '@app-state/summary';
 import { FC, memo, PropsWithChildren } from 'react';
 import { StyleSheet } from 'react-native';
 import { BorderRadiuses, Colors, Image, Text, TouchableOpacity, View } from 'react-native-ui-lib';
@@ -7,14 +7,9 @@ import { useDispatch } from 'react-redux';
 
 export type CoinListItemProps = PropsWithChildren<CoinGeckoMarkets>;
 
-const CoinListItem: FC<CoinListItemProps> = ({
-  id,
-  image,
-  name,
-  symbol,
-  current_price,
-  price_change_percentage_24h,
-}) => {
+const CoinListItem: FC<CoinListItemProps> = props => {
+  const { image, name, symbol, current_price, price_change_percentage_24h } = props;
+
   const dispatch = useDispatch();
   const priceUp = price_change_percentage_24h > 0;
 
@@ -23,7 +18,7 @@ const CoinListItem: FC<CoinListItemProps> = ({
       bg-background
       style={{ ...styles.item, borderBottomColor: Colors.divider }}
       onPress={() => {
-        dispatch(addFavorite(id));
+        dispatch(openSummary(props));
       }}
     >
       <Image source={{ uri: image }} style={styles.image} />

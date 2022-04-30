@@ -29,6 +29,9 @@ export type CoinGeckoMarkets = {
     currency: string;
     percentage: number;
   } | null;
+  sparkline_in_7d: {
+    price: number[];
+  };
   last_updated: string;
 };
 
@@ -50,3 +53,32 @@ export type CoinGeckoTrending = {
     };
   }[];
 };
+
+/** Response from the api with a single coin. */
+export interface CoinGeckoSingle {
+  id: string;
+  symbol: string;
+  name: string;
+  block_time_in_minutes: number;
+  hashing_algorithm: string;
+  categories?: string[] | null;
+  description: { en: string };
+  image: {
+    thumb: string;
+    small: string;
+    large: string;
+  };
+  country_origin: string;
+  genesis_date: string;
+  sentiment_votes_up_percentage: number;
+  sentiment_votes_down_percentage: number;
+  market_cap_rank: number;
+  coingecko_rank: number;
+  coingecko_score: number;
+  developer_score: number;
+  community_score: number;
+  liquidity_score: number;
+  public_interest_score: number;
+  status_updates?: null[] | null;
+  last_updated: string;
+}
