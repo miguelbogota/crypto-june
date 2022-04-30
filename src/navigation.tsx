@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { Colors, Text, View } from 'react-native-ui-lib';
-import { StyleSheet } from 'react-native';
+import { Platform, StyleSheet } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import Icon from '@expo/vector-icons/MaterialIcons';
@@ -133,11 +133,11 @@ const styles = StyleSheet.create({
     right: 18,
     borderRadius: 15,
     height: 90,
-    paddingTop: 26,
+    paddingTop: Platform.OS === 'ios' ? 26 : 0,
   },
   shadow: {
     borderTopWidth: 0,
-    elevation: 0,
+    elevation: 4,
     shadowOffset: {
       width: 0,
       height: 5,
