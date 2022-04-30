@@ -1,6 +1,6 @@
 import { FC, PropsWithChildren } from 'react';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { View } from 'react-native-ui-lib';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 export type ContainerProps = PropsWithChildren<{}>;
 

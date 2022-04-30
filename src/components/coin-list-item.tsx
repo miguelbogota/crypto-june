@@ -1,9 +1,9 @@
-import { CoinGeckoMarkets } from '@app-models/coin-gecko-response';
-import { openSummary } from '@app-state/summary';
 import { FC, memo, PropsWithChildren } from 'react';
 import { StyleSheet } from 'react-native';
 import { BorderRadiuses, Colors, Image, Text, TouchableOpacity, View } from 'react-native-ui-lib';
 import { useDispatch } from 'react-redux';
+import { openSummary } from '@app-state/summary';
+import { CoinGeckoMarkets } from '@app-models/coin-gecko-response';
 
 export type CoinListItemProps = PropsWithChildren<CoinGeckoMarkets>;
 

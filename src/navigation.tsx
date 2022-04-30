@@ -1,21 +1,21 @@
 import { FC } from 'react';
+import { Colors, Text, View } from 'react-native-ui-lib';
+import { StyleSheet } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import Icon from '@expo/vector-icons/MaterialIcons';
 // Views
 import Favorites from '@app-views/favorites';
-import Settings from '@app-views/settings';
-import Trending from '@app-views/trending';
-import { StyleSheet } from 'react-native';
-import { Colors, Text, View } from 'react-native-ui-lib';
 import Coins from '@app-views/coins';
+import Trending from '@app-views/trending';
+import Settings from '@app-views/settings';
 
 /** Type of routes available in the app. */
 export type NavigationOptions = {
   favorites: undefined;
-  settings: undefined;
-  trending: undefined;
   coins: undefined;
+  trending: undefined;
+  settings: undefined;
 };
 
 const Tab = createBottomTabNavigator<NavigationOptions>();

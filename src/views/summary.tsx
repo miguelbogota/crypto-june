@@ -1,15 +1,15 @@
 import { FC } from 'react';
-import { Pressable, ScrollView } from 'react-native';
 import { Button, Colors, Dialog, Text, View } from 'react-native-ui-lib';
+import { Pressable, ScrollView } from 'react-native';
 import { useDispatch } from 'react-redux';
-import Icon from '@expo/vector-icons/MaterialIcons';
-import useSWR from 'swr';
-import { CoinGeckoSingle } from '@app-models/coin-gecko-response';
-import { closeSummary, useSummary } from '@app-state/summary';
-import { addFavorite, removeFavorite, useFavorites } from '@app-state/favorites';
-import { marked } from 'marked';
-import RenderHTML from 'react-native-render-html';
 import { LineChart } from 'react-native-chart-kit';
+import RenderHTML from 'react-native-render-html';
+import { marked } from 'marked';
+import useSWR from 'swr';
+import Icon from '@expo/vector-icons/MaterialIcons';
+import { closeSummary, useSummary } from '@app-state/summary';
+import { CoinGeckoSingle } from '@app-models/coin-gecko-response';
+import { addFavorite, removeFavorite, useFavorites } from '@app-state/favorites';
 
 const noSummary = '__no_summary__';
 

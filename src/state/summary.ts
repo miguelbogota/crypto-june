@@ -1,7 +1,7 @@
-import { CoinGeckoMarkets } from '@app-models/coin-gecko-response';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { useSelector } from 'react-redux';
 import { RootState } from './store';
+import { CoinGeckoMarkets } from '@app-models/coin-gecko-response';
 
 const summarySlice = createSlice({
   name: 'summary',

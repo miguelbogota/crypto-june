@@ -1,10 +1,10 @@
 import { FC } from 'react';
 import { Text } from 'react-native-ui-lib';
-import useSWR from 'swr';
-import { CoinGeckoMarkets, CoinGeckoTrending } from '@app-models/coin-gecko-response';
-import Container from '@app-components/container';
 import { FlatList } from 'react-native';
+import useSWR from 'swr';
+import Container from '@app-components/container';
 import CoinListItem from '@app-components/coin-list-item';
+import { CoinGeckoMarkets, CoinGeckoTrending } from '@app-models/coin-gecko-response';
 
 const Trending: FC = () => {
   const { data: trendingData, error: trendingError } = useSWR<CoinGeckoTrending>(

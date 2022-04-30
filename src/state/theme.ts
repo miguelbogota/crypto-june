@@ -1,7 +1,7 @@
-import { Appearance } from 'react-native';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { useSelector } from 'react-redux';
 import { Colors } from 'react-native-ui-lib';
+import { Appearance } from 'react-native';
+import { useSelector } from 'react-redux';
 import { RootState } from './store';
 
 export type Theme = 'light' | 'dark';

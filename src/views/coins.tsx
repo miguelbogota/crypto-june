@@ -1,11 +1,11 @@
 import { FC, useEffect, useState } from 'react';
 import { Text, Incubator, Colors, View } from 'react-native-ui-lib';
-import Container from '@app-components/container';
-import useSWR from 'swr';
-import { CoinGeckoMarkets } from '@app-models/coin-gecko-response';
 import { FlatList } from 'react-native';
-import CoinListItem from '@app-components/coin-list-item';
 import { useNavigation } from '@react-navigation/native';
+import useSWR from 'swr';
+import Container from '@app-components/container';
+import CoinListItem from '@app-components/coin-list-item';
+import { CoinGeckoMarkets } from '@app-models/coin-gecko-response';
 
 const { TextField } = Incubator;
 

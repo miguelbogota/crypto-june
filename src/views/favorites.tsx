@@ -1,11 +1,11 @@
 import { FC } from 'react';
+import { Text } from 'react-native-ui-lib';
+import { FlatList } from 'react-native';
+import useSWR from 'swr';
 import CoinListItem from '@app-components/coin-list-item';
 import Container from '@app-components/container';
 import { CoinGeckoMarkets } from '@app-models/coin-gecko-response';
 import { useFavorites } from '@app-state/favorites';
-import { FlatList } from 'react-native';
-import { Text } from 'react-native-ui-lib';
-import useSWR from 'swr';
 
 const Favorites: FC = () => {
   const favorites = useFavorites();

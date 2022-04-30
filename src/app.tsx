@@ -3,16 +3,16 @@ configureColors();
 
 import { FC } from 'react';
 import { registerRootComponent } from 'expo';
+import { StatusBar } from 'react-native';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { persistStore } from 'redux-persist';
 import SWRDefaultConfig from '@app-lib/swr-default-config';
-import { useThemeSwitcher } from '@app-components/theme-switcher';
+import Summary from '@app-views/summary';
 import Navigation from './navigation';
 import store from '@app-state/store';
-import { StatusBar } from 'react-native';
+import { useThemeSwitcher } from '@app-components/theme-switcher';
 import { useTheme } from '@app-state/theme';
-import Summary from '@app-views/summary';
 
 /** Main app with availability of the providers. */
 const App: FC = () => {

@@ -1,7 +1,7 @@
 import { FC, PropsWithChildren, useEffect, useState } from 'react';
 import { useColorScheme } from 'react-native';
-import { useDispatch } from 'react-redux';
 import { Colors, RadioButton, RadioGroup, Text } from 'react-native-ui-lib';
+import { useDispatch } from 'react-redux';
 import { setSystemTheme, setTheme, ThemeWithSystem, useTheme } from '@app-state/theme';
 
 export type ThemeSwitcherProps = PropsWithChildren<{}>;
