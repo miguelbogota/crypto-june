@@ -2,6 +2,8 @@
 
 Crypto June is a crypto currency tracker.
 
+See more at https://miguelbogotadev.com/works/crypto-june
+
 #### Technologies Used:
 
 - [Expo](https://expo.dev)
